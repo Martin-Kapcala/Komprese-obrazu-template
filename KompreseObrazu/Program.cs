@@ -8,7 +8,7 @@
         Obrazek inputCSV = new Obrazek();
 
         //Cesta k testovacímu souboru
-        String testFilePath = @"C:\Users\MartinKapcala\OneDrive - Vítkovická střední průmyslová škola\Dokumenty\Programování\PG\Komprese-obrazu\KompreseObrazu\CSV\obr1-10.csv";
+        String testFilePath = @"C:\Users\MartinKapcala\OneDrive - Vítkovická střední průmyslová škola\Dokumenty\Programování\PG\Komprese-obrazu\KompreseObrazu\CSV\obr3-100.csv";
         
         //Test metody, která načte vstupní obrázek
         inputCSV.readImg(testFilePath);

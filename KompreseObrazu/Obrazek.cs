@@ -73,9 +73,10 @@ namespace Komprese
                     {
                         Console.Write("{0},", line[i]);
                         obrazek [i,j] = Int32.Parse(line[i]);
-                    }                    
+                    }
+                    j++;                    
                 }
-                j++;
+                
             }
         }
         catch (Exception e)
