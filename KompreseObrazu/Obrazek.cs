@@ -12,6 +12,13 @@ namespace Komprese
     private int [,] obrazek = null;
 
     /// <summary>
+    /// Konstruktor, který vytvoří instanci obrázku.
+    /// </summary>
+    /// <param name="filePath">Cesta k obrázku</param>
+    public Obrazek(string filePath){
+        readImg(filePath);
+    }
+    /// <summary>
     /// Metoda spočítá vertikální velikost obrazu na základě počtu řádků ve vstupním CSV souboru
     /// </summary>
     /// <param name="filePath">Řetězec reprezentuje cestu k souboru</param>
@@ -51,7 +58,7 @@ namespace Komprese
     /// vertikální velikosti vypočítáné z počtu řádků.
     /// </summary>
     /// <param name="filePath">Cesta ke vstupnímu obrázku</param>
-    public void readImg(String filePath){
+    private void readImg(String filePath){
 
         StreamReader sr = null;
         String [] line = null;
@@ -71,7 +78,6 @@ namespace Komprese
                                    
                     for (int i = 0; i < obrazek.GetLength(0); i++)
                     {
-                        Console.Write("{0},", line[i]);
                         obrazek [i,j] = Int32.Parse(line[i]);
                     }
                     j++;                    
