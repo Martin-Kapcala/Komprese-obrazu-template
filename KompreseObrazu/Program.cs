@@ -7,7 +7,7 @@
         
 
         //Cesta k testovacímu souboru
-        String testFilePath = @"C:\Users\MartinKapcala\OneDrive - Vítkovická střední průmyslová škola\Dokumenty\Programování\PG\Komprese-obrazu\KompreseObrazu\CSV\obr3-100.csv";
+        String testFilePath = @"C:\Users\MartinKapcala\OneDrive - Vítkovická střední průmyslová škola\Dokumenty\Programování\PG\Komprese-obrazu\KompreseObrazu\CSV\obr1-10.csv";
         
         //vytvoření instance třídy Obrazek
         Obrazek inputCSV = new Obrazek(testFilePath);
