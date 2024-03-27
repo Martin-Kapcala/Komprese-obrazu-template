@@ -2,6 +2,7 @@
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml;
+using System.Xml.XPath;
 
 namespace Komprese
 {
@@ -9,7 +10,7 @@ namespace Komprese
     /// <summary>
     /// Privátní statické dvourozměrné pole, které obsahuje jednotlivé symboly obrázku reprezentující barvu pixelu
     /// </summary>
-    private int [,] obrazek = null;
+    private int [,] obrazek;
 
     /// <summary>
     /// Konstruktor, který vytvoří instanci obrázku.
@@ -106,5 +107,64 @@ namespace Komprese
             Console.WriteLine();
         }
     }
+    /// <summary>
+    /// V načteném obrázku najde všechny unikátní barvy, vloží je do seznamu.
+    /// </summary>
+    /// <returns>Vrací seznam s unikátními barvami, které jsou reprezentované celými čísly </returns>
+    public List<int> PaletaBarevObrazku (){
+       
+        List<int> result = new List<int>();
+
+        for (int j = 0; j < obrazek.GetLength(1); j++)
+        {
+            
+            for (int i = 0; i < obrazek.GetLength(0); i++)
+            {                
+                if(!result.Contains(obrazek[i,j])){
+                    result.Add(obrazek[i,j]);
+                }
+                
+            }
+            
+        }
+        return result;
+    }
+
+    public int[,] PocetUnikatnichBarev(){
+        List<int> unikatniBarvy = PaletaBarevObrazku();
+
+        int [,] result = new int[unikatniBarvy.Count,2];
+        int pocetVyskytuBarvy;
+
+        
+
+        for (int k = 0; k < unikatniBarvy.Count; k++)
+        {
+            pocetVyskytuBarvy = 0;
+            
+            for (int j = 0; j < obrazek.GetLength(1); j++)
+            {
+            
+                for (int i = 0; i < obrazek.GetLength(0); i++)
+                { 
+                    if(unikatniBarvy[k] == obrazek[i,j]){
+                        pocetVyskytuBarvy++;
+                    }
+                }
+            }
+
+
+            result[k,0] = unikatniBarvy[k];
+            result[k,1] = pocetVyskytuBarvy;
+
+            
+            
+            
+        }
+
+        return result;
+    } 
+
+
   }  
 }
