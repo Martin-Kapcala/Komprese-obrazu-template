@@ -6,7 +6,7 @@
         
         
 
-        //Cesta k testovacímu souboru
+        //Cesta k testovacímu souboru "Upravit, dle svého PC!!!!"
         String testFilePath = @"C:\Users\MartinKapcala\OneDrive - Vítkovická střední průmyslová škola\Dokumenty\Programování\PG\Komprese-obrazu\KompreseObrazu\CSV\obr1-10.csv";
         
         //vytvoření instance třídy Obrazek, který se načte ze souboru
