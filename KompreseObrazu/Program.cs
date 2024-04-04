@@ -43,6 +43,11 @@
         foreach(int element in inputCSV.PocetUnikatnichBarev()){
             Console.WriteLine($"{element}, ");
         }
+
+        var tree = new BinaryTree<int>();
+ 
+        foreach(var value in new[]{8,5,6,4,1,2})
+            tree.Add(value);
         
 
     }
