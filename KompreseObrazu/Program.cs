@@ -49,7 +49,7 @@
         foreach(var value in new[]{8,5,6,4,1,2})
             tree.Add(value);
         
-
+        Console.WriteLine(tree.Root.Right.Value);
     }
     
 }
